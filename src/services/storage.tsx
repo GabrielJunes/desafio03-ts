@@ -7,13 +7,13 @@ const dioBank = {
 }
 
 export const getAllLocalStorage = (): string | null  => {
-    return localStorage.getItem('diobank')
+    return localStorage.getItem('dioBank')
 }
 
 export const createLocalStorage = (): void => {
-    localStorage.setItem('diobank', JSON.stringify(dioBank))
+    localStorage.setItem('dioBank', JSON.stringify(dioBank))
 }
 
 export const changeLocalStorage = (dioBank: IDIoBank): void => {
-    localStorage.setItem('diobank', JSON.stringify(dioBank))
+    localStorage.setItem('dioBank', JSON.stringify(dioBank))
 }

@@ -31,11 +31,15 @@ const Conta = () => {
         getData()
     }, [])
 
-    const actualData = new Date()
+    
 
     if(userData && id !== userData.id) {
         navigate('/')
     }
+
+    const actualDate = new Date()
+    const dateString = actualDate.toLocaleDateString()
+    const timeString = actualDate.toLocaleTimeString()
   
     return (
         <Center>
@@ -49,8 +53,8 @@ const Conta = () => {
                     ) : 
                     (
                         <>
-                            <CardInfo mainContent={`Bem vinda ${userData?.name}`} content={`${actualData.getDay()} / ${actualData.getMonth()} / ${actualData.getFullYear()} ${actualData.getHours()}:${actualData.getMinutes()}`} />
-                            <CardInfo mainContent='Saldo' content={`R$ ${userData.balance}`}/>
+                            <CardInfo mainContent={`Bem vindo ${userData?.name}`} content={`${dateString} ${timeString}`} />
+                            <CardInfo mainContent='Seu Saldo é' content={`R$ ${userData.balance}`}/>
                         </>
                     )
                 }

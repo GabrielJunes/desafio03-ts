@@ -8,10 +8,12 @@ import Home from "./pages/Home"
 const MainRoutes = () => {
     const { isLoggedIn } = useContext(AppContext)
 
+    const teste = localStorage.getItem("login")
+
     return(
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/conta/:id' element={ isLoggedIn ? <Conta /> : <Home/> } />
+            <Route path='/conta/:id' element={ isLoggedIn || teste? <Conta /> : <Home/> } />
             <Route path='/infoconta' element={<ContaInfo />} />
         </Routes>
     )

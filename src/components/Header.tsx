@@ -25,11 +25,15 @@ export const Header  = () => {
         isLoggedIn && (
           <>
             <Spacer />
+            <Button marginRight='5px' onClick={() => navigate('/infoconta')}>
+              Informações do usuário
+            </Button>
             <Button
               onClick={() => logout()}
             >
               Sair
             </Button>
+            
           </>
         )
       }
